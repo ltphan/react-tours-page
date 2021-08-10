@@ -6,13 +6,10 @@ function App() {
     {id: 2, name: "Blog2", body: "Blah blah blah"},
     {id: 3, name: "Blog3", body: "Blah blah blah"}
   ])
-  console.log("blogs", blogs)
-
 
   const handleDelete = (id) => {
     const newBlogs = blogs.filter(blog => blog.id !== id)
     setBlogs(newBlogs)
-    console.log("blogs filtered", blogs)
   }
 
   return (
