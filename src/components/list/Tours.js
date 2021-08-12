@@ -7,9 +7,6 @@ const Tours = () => {
 
     const fetchData = async () => {
         const result = await fetchTours()
-        if (result.length === 0) {
-            throw new Error("Empty tours array")
-        }
         setTours(result)
     }
 
