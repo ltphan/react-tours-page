@@ -4,6 +4,6 @@ export async function fetchTours() {
         const data = await response.json()
         return data
     } catch (e) {
-        console.log(e)
+        throw new Error("Failed at fetching tours data")
     }
 }
