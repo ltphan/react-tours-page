@@ -1,29 +1,7 @@
-import { useState } from "react"
+import Home from "./screens/Home"
 
 function App() {
-  const [blogs, setBlogs] = useState([
-    {id: 1, name: "Blog1", body: "Blah blah blah"},
-    {id: 2, name: "Blog2", body: "Blah blah blah"},
-    {id: 3, name: "Blog3", body: "Blah blah blah"}
-  ])
-
-  const handleDelete = (id) => {
-    const newBlogs = blogs.filter(blog => blog.id !== id)
-    setBlogs(newBlogs)
-  }
-
-  return (
-    <div>
-      {blogs.map(blog => {
-        return (
-      <div key={blog.id}>
-        <li>{blog.name}</li>
-        <button onClick={() => handleDelete(blog.id)}>{"Delete"}</button>
-      </div>
-        )
-      })}
-    </div>
-  );
+  return <Home />
 }
 
 export default App;
