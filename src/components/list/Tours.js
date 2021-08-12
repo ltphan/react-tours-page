@@ -1,28 +1,34 @@
 import { useEffect, useState } from "react"
 
-import mockData from "../../data/index"
+import { fetchTours } from "../../data/index"
 
 const Tours = () => {
-    const [blogs, setBlogs] = useState(null)
-    console.log(blogs)
+    const [tours, setTours] = useState(null)
+
+    const fetchData = async () => {
+        const result = await fetchTours()
+        if (result.length === 0) {
+            throw new Error("Empty tours array")
+        }
+        setTours(result)
+    }
 
     const handleDelete = (id) => {
-      const newBlogs = blogs.filter(blog => blog.id !== id)
-      setBlogs(newBlogs)
+      const newBlogs = tours.filter(tour => tour.id !== id)
+      setTours(newBlogs)
     }
 
     useEffect(() => {
-        setBlogs(mockData)
-        console.log("useEffect runs after every render")
+        fetchData()
     },[])
   
     return (
       <div>
-        {blogs && blogs.map(blog => {
+        {tours && tours.map(tour => {
           return (
-        <div key={blog.id}>
-          <li>{blog.name}</li>
-          <button onClick={() => handleDelete(blog.id)}>{"Delete"}</button>
+        <div key={tour.id}>
+          <li>{tour.name}</li>
+          <button onClick={() => handleDelete(tour.id)}>{"Delete"}</button>
         </div>
           )
         })}
