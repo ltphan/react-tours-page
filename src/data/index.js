@@ -1,9 +1,9 @@
-const mockData = [
-    {id: 1, name: "Blog1", body: "Blah blah blah"},
-    {id: 2, name: "Blog2", body: "Blah blah blah"},
-    {id: 3, name: "Blog3", body: "Blah blah blah"},
-    {id: 4, name: "Blog4", body: "Blah blah blah"},
-    {id: 5, name: "Blog5", body: "Blah blah blah"}
-]
-
-export default mockData
+export async function fetchTours() {
+    try {
+        const response = await fetch("https://course-api.com/react-tours-project")
+        const data = await response.json()
+        return data
+    } catch (e) {
+        console.log(e)
+    }
+}
