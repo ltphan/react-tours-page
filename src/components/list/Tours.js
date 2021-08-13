@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react"
 
 import { fetchTours } from "../../data/index"
+import Tour from "../../components/item/Tour"
 
 const Tours = () => {
     const [tours, setTours] = useState(null)
@@ -22,12 +23,7 @@ const Tours = () => {
     return (
       <div>
         {tours && tours.map(tour => {
-          return (
-        <div key={tour.id}>
-          <li>{tour.name}</li>
-          <button onClick={() => handleDelete(tour.id)}>{"Delete"}</button>
-        </div>
-          )
+          return <Tour id={tour.id} name={tour.name} handleDelete={() => handleDelete(tour.id)}/>
         })}
       </div>
     );
