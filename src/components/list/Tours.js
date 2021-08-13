@@ -33,10 +33,10 @@ const Tours = () => {
     return (
       <div>
         {loading && <Loading />}
+        {error && <Error />}
         {tours && tours.map(tour => {
           return <Tour key={tour.id} name={tour.name} handleDelete={() => handleDelete(tour.id)}/>
         })}
-        {error && <Error />}
       </div>
     );
 }
