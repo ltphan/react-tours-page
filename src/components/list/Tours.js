@@ -23,7 +23,7 @@ const Tours = () => {
     return (
       <div>
         {tours && tours.map(tour => {
-          return <Tour id={tour.id} name={tour.name} handleDelete={() => handleDelete(tour.id)}/>
+          return <Tour key={tour.id} name={tour.name} handleDelete={() => handleDelete(tour.id)}/>
         })}
       </div>
     );
