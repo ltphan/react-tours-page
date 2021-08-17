@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react"
 
 import { fetchTours } from "../../data/index"
-import Tour from "../../components/item/Tour"
-import Loading from "../../components/item/Loading"
-import Error from "../../components/item/Error"
+import Tour from "../item/Tour"
+import Loading from "../item/Loading"
+import Error from "../item/Error"
 
 const Tours = () => {
     const [tours, setTours] = useState(null)
