@@ -1,8 +1,8 @@
-const Tour = ({id, name, handleDelete}) => {
+const Tour = ({name, handleDelete}) => {
     return (
         <>
             <li>{name}</li>
-            <button onClick={() => handleDelete(id)}>{"Delete"}</button>
+            <button onClick={handleDelete}>{"Delete"}</button>
         </>
     )
 }
