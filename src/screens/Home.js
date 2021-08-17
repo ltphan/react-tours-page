@@ -1,7 +1,7 @@
-import Tours from "../components/list/Tours"
+import Button from "../components/item/Button"
 
 const Home = () => {
-  return <Tours />
+  return <Button />
 }
 
 export default Home
