@@ -11,7 +11,6 @@ export const useFetch = () => {
       try {
         const result = await fetchTours()
         setTours(result)
-        console.log(tours)
       } catch (e) {
         setError(true)
       } finally {
