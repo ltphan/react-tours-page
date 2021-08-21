@@ -5,6 +5,7 @@ import ShowText from "./ShowText"
 const Button = () => {
     const [toggle, setToggle] = useState(true)
     const [random, setRandom] = useState(Math.random())
+    
 
     useEffect(() => {
         console.log("render in button component")
@@ -15,18 +16,22 @@ const Button = () => {
     })
 
     const handleToggle = () => {
-        setToggle((prev) => {
-            console.log("previous state of toggle", prev)
-            const toggledVal = !prev
-            console.log("new state of toggle", toggledVal)
-            return toggledVal
-        })
+        // setToggle((prev) => {
+        //     console.log("previous state of toggle", prev)
+        //     const toggledVal = !prev
+        //     console.log("new state of toggle", toggledVal)
+        //     return toggledVal
+        // })
+        setToggle(!toggle)
+
+        
         console.log("value of toggle", toggle)
     }
 
     const reRender = () => {
         setRandom(Math.random())
     }
+
 
     return (
     <div>
