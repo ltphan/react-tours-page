@@ -7,9 +7,8 @@ export const useFetch = () => {
     const [loading, setLoading] = useState(true)
     const [error, setError] = useState(false)
 
-    const fetchData = async (abortSignal, isMounted) => {
-      if (isMounted) {
-        const result = await fetchTours(abortSignal)
+    const fetchData = async () => {
+        const result = await fetchTours()
         if (result === false) {
             setError(true)
             setLoading(false)
@@ -18,19 +17,18 @@ export const useFetch = () => {
             setError(false)
             setLoading(false)
         }
-      } 
     }
   
     useEffect(() => {
-        const abortController = new AbortController()
-        const abortSignal = abortController.signal
         let isMounted = true
-
-        setTimeout(() => fetchData(abortSignal, isMounted), 1000)
+        
+        if (isMounted) {
+          setTimeout(() => fetchData(), 1000)
+        }
 
         return () => {
           isMounted = false
-          abortController.abort()
+          console.log("fetch aborted")
         }
     }, [])
 

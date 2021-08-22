@@ -1,8 +1,7 @@
-export async function fetchTours(abortSignal) {
+export async function fetchTours() {
     try {
         const response = await fetch("https://course-api.com/react-tours-project", 
-        {"Access-Control-Allow-Origin": "*",
-         "signal": abortSignal
+        {"Access-Control-Allow-Origin": "*"
     })
         if (!response.ok) {
             throw new Error("Failed at fetching tours data")  
