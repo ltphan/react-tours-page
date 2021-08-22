@@ -8,18 +8,28 @@ export const useFetch = () => {
     const [error, setError] = useState(false)
 
     const fetchData = async () => {
-      try {
         const result = await fetchTours()
-        setTours(result)
-      } catch (e) {
-        setError(true)
-      } finally {
-        setLoading(false)
-      }
+        if (result === false) {
+            setError(true)
+            setLoading(false)
+        } else {
+            setTours(result)
+            setError(false)
+            setLoading(false)
+        }
     }
-
+  
     useEffect(() => {
-        setTimeout(fetchData, 1000)
+        let isMounted = true
+        
+        if (isMounted) {
+          setTimeout(() => fetchData(), 1000)
+        }
+
+        return () => {
+          isMounted = false
+          console.log("fetch aborted")
+        }
     }, [])
 
     return [tours, loading, error, setTours]
