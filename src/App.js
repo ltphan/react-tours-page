@@ -1,10 +1,9 @@
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 import Home from "./screens/Home"
-import About from "./screens/About"
+import Closure from "./screens/Closure"
 import Callbacks from "./screens/Callbacks"
 import NavBar from "./navigation/NavBar"
-
 
 function App() {
   return (
@@ -14,8 +13,8 @@ function App() {
       <Route path="/" exact>
         <Home />
       </Route>
-      <Route path="/about">
-        <About />
+      <Route path="/closure">
+        <Closure />
       </Route>
       <Route path="/callbacks">
         <Callbacks />
