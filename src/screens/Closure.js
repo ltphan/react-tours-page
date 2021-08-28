@@ -1,8 +1,7 @@
 import useCounter from "../hooks/useCounter"
 
-const About = () => {
+const Closure = () => {
     const [count, add] = useCounter()
-    console.log("count in about scope", count)
 
     return (
         <div>
@@ -12,4 +11,4 @@ const About = () => {
     )
 }
 
-export default About
+export default Closure
