@@ -1,6 +1,6 @@
 import { useRef } from "react"
 
-const Form = () => {
+const StopWatch = () => {
     const countRef = useRef(0)
 
     const handleClick = () => {
@@ -16,4 +16,4 @@ const Form = () => {
     )
 }
 
-export default Form
+export default StopWatch

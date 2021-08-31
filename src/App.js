@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Home from "./screens/Home"
 import Closure from "./screens/Closure"
 import Callbacks from "./screens/Callbacks"
-import Form from "./screens/Form"
+import StopWatch from "./screens/StopWatch"
 import NavBar from "./navigation/NavBar"
 
 function App() {
@@ -20,8 +20,8 @@ function App() {
       <Route path="/callbacks">
         <Callbacks />
       </Route>
-      <Route path="/form">
-        <Form />
+      <Route path="/stopwatch">
+        <StopWatch />
       </Route>
     </Switch>
   </Router>
