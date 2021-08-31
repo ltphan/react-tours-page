@@ -5,7 +5,6 @@ const Form = () => {
 
     const handleClick = () => {
         countRef.current++ 
-        console.log(String(countRef.current))
     }
 
     console.log("I rendered")
@@ -13,7 +12,6 @@ const Form = () => {
     return (
         <div>
             <button onClick={handleClick}>{"Click Me"}</button>
-            <div>{countRef.current}</div>
         </div>
     )
 }
