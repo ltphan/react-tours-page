@@ -1,14 +1,15 @@
 import { useState } from "react"
 
 const useCounter = () => {
-    const [count, setCount] = useState(() => 0)
-
-    console.log("in use counter", count)
+    const [count, setCount] = useState(0)
 
     const add = () => { 
         setTimeout(() => {
-            setCount(prevCount => prevCount + 1)
-        }, 3000)
+            setCount(prevCount => {
+                return prevCount + 1})
+        }, 2000)
+
+        console.log("count", count)
     }
 
     return [count, add]
