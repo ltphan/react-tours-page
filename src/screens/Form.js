@@ -1,13 +1,11 @@
-import { useRef, useState } from "react"
+import { useRef } from "react"
 
 const Form = () => {
-    const [count, setCount] = useState(0)
-    const countRef = useRef()
-    countRef.current = count
+    const countRef = useRef(0)
 
     const handleClick = () => {
         countRef.current++ 
-        setCount(countRef.current)
+        console.log(String(countRef.current))
     }
 
     console.log("I rendered")
