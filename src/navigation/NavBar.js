@@ -7,6 +7,7 @@ const NavBar = () => {
                 <Link to="/">Tours</Link>
                 <Link to="/closure">Closure</Link>
                 <Link to="/callbacks">Callbacks</Link>
+                <Link to="/form">Form</Link>
            </div>
        </nav>
     )
