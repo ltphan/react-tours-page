@@ -31,19 +31,6 @@ const Callbacks = () => {
 
 export default Callbacks
 
-// const getData = (ms, callback) => {
-//     if (ms > 0) {
-//         console.log("hit in the if statement")
-//         return callback(ms.toString())
-//     } else {
-//         console.log("hit outside the if statement")
-//         callback(ms.toString())
-//     }
-// }
-
-// setTimeouts for callbacks JSON using fetch 
-
-
 const getData = async (jsonFile, callback) => {
     const response = await fetch(jsonFile)
     if (response.status === 200) {
